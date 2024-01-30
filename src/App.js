@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route,Navigate } from 'react-router-dom';
 import { createBrowserHistory } from 'history';
 import Login from './login';
 import Home from './home';
@@ -11,11 +11,7 @@ function App() {
   return (
     <Router history={history} basename="/op">
     <Routes>
-    {token ?
-      <Route path="/" element={<Home />} />
-      :
-      <Route path="/" element={<Login />} />
-    }
+    <Route path="/" element={token ? <Navigate to="/home" /> : <Login />} />
       <Route path="/home" element={<Home />} />
     </Routes>
   </Router>
