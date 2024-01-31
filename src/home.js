@@ -6,7 +6,6 @@ const Home = () => {
  
   return (
     <div>
-    <span className="brandName">{brandName}</span>
       <p className="para">Home Page for OP Application</p>
     </div>
   );
