@@ -11,6 +11,10 @@ export const getTenantId = () => {
     return tenantId || '';
 };
 
+export const getName = () => {
+    const { name } =  JSON.parse(localStorage.getItem('user') || '{}');
+    return name || '';
+};
 
 export const getBrandName = () => {
     const { brandName } =  JSON.parse(localStorage.getItem('user') || '{}');
